@@ -17,9 +17,12 @@ struct ContentView: View {
                     ToolbarItemGroup(placement: .bottomBar) {
                         HStack {
                             /// Referred https://stackoverflow.com/questions/65778208/accessibility-of-image-in-button-in-toolbaritem
+                            /// https://www.hackingwithswift.com/plus/ultimate-portfolio-app/making-your-app-accessible
                             
                             /// With this enabled, VO reads the accessibilityLabel specified.
-                            // Text("").accessibilityHidden(true)
+                            if UIAccessibility.isVoiceOverRunning {
+                                Text("").accessibilityHidden(true)
+                            }
                             
                             Button(action: {
                                 //
