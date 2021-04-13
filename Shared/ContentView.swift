@@ -16,8 +16,10 @@ struct ContentView: View {
                 .toolbar(content: {
                     ToolbarItemGroup(placement: .bottomBar) {
                         HStack {
-                            Text("").accessibilityHidden(true)
-                            
+                            /**
+                             With this enabled, VO reads the accessibilityLabel specified.
+                             Referred https://stackoverflow.com/questions/65778208/accessibility-of-image-in-button-in-toolbaritem
+                             */
                             Button(action: {
                                 //
                             }) {
